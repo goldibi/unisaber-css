@@ -248,7 +248,7 @@ body.template-product .nav-desktop.nav-menu-full {
 	--instafeed-foreground: #0a0000 !important;
 }
 
-body, .products-section, section, .category-body {
+body, .products-section, section:not(.section-hero):not([class*="swiper"]):not([class*="banner"]), .category-body {
 	background-color: #F7F4EC !important;
 }
 
@@ -351,10 +351,12 @@ a.btn-primary,
 	color: #0a0000 !important;
 }
 
-/* 10. Nome do produto (variante item-name) - Playfair Display, preto */
+/* 10. Nome do produto (variante item-name) - Playfair Display, preto, 17px, 400 */
 .js-item-name.item-name {
 	font-family: "Playfair Display", serif !important;
 	color: #0a0000 !important;
+	font-size: 17px !important;
+	font-weight: 400 !important;
 }
 
 /* 11. Botão COMPRAR no hover - fundo vermelho, Outfit, texto/ícone branco, 16px */
@@ -440,16 +442,42 @@ a.btn-primary,
 	stroke: #0a0000 !important;
 }
 
+/* 26. FIX: Hero Section (carrossel do topo) some em algumas cargas de página.
+   Causa: o tema usa scroll-reveal via classe "hidden" no container do slider,
+   trocada por JS para "is-inViewport" quando a seção entra na tela. Em algumas
+   cargas esse JS não dispara a tempo e a classe "hidden" nunca é removida.
+   Forçando visibilidade direto, independente do estado dessa classe. */
+.js-home-main-slider-container.hidden {
+	display: block !important;
+	opacity: 1 !important;
+	visibility: visible !important;
+}
+
 /* 25. Menu principal (desktop) - centralizar e reduzir espaçamento entre links.
    Causa do espaçamento grande: classe .justify-content-between distribui os
    links nas pontas do container inteiro. Troca pra layout centralizado com
-   espaçamento fixo entre itens (aprox. 60% menor que a distância que existia). */
+   espaçamento fixo entre itens (aprox. 60% menor que a distância que existia).
+   flex-wrap:nowrap impede quebra em 2 linhas; gap menor em telas mais estreitas
+   evita que o menu ultrapasse a largura disponível. */
 .js-nav-desktop-list.nav-desktop-list.justify-content-between {
 	justify-content: center !important;
+	flex-wrap: nowrap !important;
 	gap: 32px !important;
+	white-space: nowrap !important;
 }
 .nav-desktop-list li {
 	padding: 0 4px !important;
+}
+@media (max-width: 1100px) {
+	.js-nav-desktop-list.nav-desktop-list.justify-content-between {
+		gap: 14px !important;
+	}
+}
+@media (max-width: 950px) {
+	.js-nav-desktop-list.nav-desktop-list.justify-content-between {
+		gap: 6px !important;
+		font-size: 13px !important;
+	}
 }
 
 /* 24. Seção CHIC COLLECTION (produto em destaque na Home) - fundo branco */
