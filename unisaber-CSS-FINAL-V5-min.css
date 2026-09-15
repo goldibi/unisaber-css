@@ -266,3 +266,116 @@ a.btn-primary,
 .section-title, .price, .js-price-container .price {
 	color: #B8860B !important;
 }
+
+/* ============================================
+   AJUSTES HOME 15/09 - lista numerada do cliente
+   ============================================ */
+
+/* 1. Faixa de anúncio (topo) - fundo dourado, texto preto */
+.js-adbar.section-adbar {
+	background-color: #B8860B !important;
+}
+.js-adbar.section-adbar, .js-adbar.section-adbar * {
+	color: #0a0000 !important;
+}
+
+/* 2. Contact bar - fundo off-white, texto preto (inclui webkit-text-fill-color,
+   que é a propriedade que o tema usa e sobrescreve "color" sozinho) */
+.js-contact-bar {
+	background-color: #F7F4EC !important;
+}
+.js-contact-bar, .js-contact-bar a, .js-contact-bar span, .js-contact-bar div {
+	color: #0a0000 !important;
+	-webkit-text-fill-color: #0a0000 !important;
+}
+.js-contact-bar svg, .js-contact-bar svg * {
+	fill: #0a0000 !important;
+	stroke: #0a0000 !important;
+}
+
+/* 3. Título do banner/swiper - Playfair Display, branco */
+.swiper-title.h1-huge.mb-3 {
+	font-family: "Playfair Display", serif !important;
+	color: #ffffff !important;
+}
+
+/* 4. Descrição do banner/swiper - Outfit, branco */
+.swiper-description.mb-3 {
+	font-family: "Outfit", sans-serif !important;
+	color: #ffffff !important;
+}
+
+/* 5. Ícone das setas de navegação do banner - branco, sem fundo */
+.icon-inline.icon-lg {
+	fill: #ffffff !important;
+	stroke: #ffffff !important;
+	color: #ffffff !important;
+	background: none !important;
+}
+
+/* 6. Título de seção (ex: "Mais Vendidos") - Playfair Display, dourado */
+.text-heading.mb-0 {
+	font-family: "Playfair Display", serif !important;
+	color: #B8860B !important;
+}
+
+/* 7. Subtítulo da Home - Outfit, preto */
+.home-subtitle.text-subtitle {
+	font-family: "Outfit", sans-serif !important;
+	color: #0a0000 !important;
+}
+
+/* 8. Nome do produto no card - Playfair Display, preto */
+.product-item-name {
+	font-family: "Playfair Display", serif !important;
+	color: #0a0000 !important;
+}
+
+/* 9. Botão COMPRAR no hover - fundo vermelho, texto/ícone branco, Playfair Display */
+.btn:hover, .btn-primary:hover, a.btn:hover {
+	font-family: "Playfair Display", serif !important;
+	background-color: #B11226 !important;
+	border-color: #B11226 !important;
+	color: #ffffff !important;
+}
+.btn:hover svg, .btn-primary:hover svg, a.btn:hover svg {
+	fill: #ffffff !important;
+	stroke: #ffffff !important;
+}
+
+/* 10. Nome do produto na página de produto - Playfair Display, preto */
+.js-product-name.product-name.my-2 {
+	font-family: "Playfair Display", serif !important;
+	color: #0a0000 !important;
+}
+
+/* 11. Seção de marcas (Assouline/Taschen/etc) - fundo branco */
+.section-home.section-brands-home {
+	background-color: #ffffff !important;
+}
+
+/* 12. Seção FAQ - fundo branco */
+.section-home.section-faq {
+	background-color: #ffffff !important;
+}
+
+/* 13. Pergunta do FAQ - Outfit, preto */
+.faq-question-text {
+	font-family: "Outfit", sans-serif !important;
+	color: #0a0000 !important;
+}
+
+/* 14. Resposta do FAQ - Playfair Display, preto */
+.faq-answer.js-accordion-content {
+	font-family: "Playfair Display", serif !important;
+	color: #0a0000 !important;
+}
+
+/* 15. Rodapé - fundo dourado, texto/fonte Outfit branco */
+footer {
+	background-color: #B8860B !important;
+}
+footer, footer a, footer p, footer span, footer div, footer h4 {
+	font-family: "Outfit", sans-serif !important;
+	color: #ffffff !important;
+}
