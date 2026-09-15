@@ -440,6 +440,18 @@ a.btn-primary,
 	stroke: #0a0000 !important;
 }
 
+/* 25. Menu principal (desktop) - centralizar e reduzir espaçamento entre links.
+   Causa do espaçamento grande: classe .justify-content-between distribui os
+   links nas pontas do container inteiro. Troca pra layout centralizado com
+   espaçamento fixo entre itens (aprox. 60% menor que a distância que existia). */
+.js-nav-desktop-list.nav-desktop-list.justify-content-between {
+	justify-content: center !important;
+	gap: 32px !important;
+}
+.nav-desktop-list li {
+	padding: 0 4px !important;
+}
+
 /* 24. Seção CHIC COLLECTION (produto em destaque na Home) - fundo branco */
 section.section-home.home-main-product {
 	background-color: #ffffff !important;
