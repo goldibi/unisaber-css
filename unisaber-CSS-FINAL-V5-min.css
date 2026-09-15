@@ -242,6 +242,10 @@ body.template-product .nav-desktop.nav-menu-full {
 	--search-foreground: #0a0000 !important;
 	--search-background: #ffffff !important;
 	--topbar-foreground: #0a0000 !important;
+	--main-categories-background: #ffffff !important;
+	--main-categories-foreground: #0a0000 !important;
+	--instafeed-background: #ffffff !important;
+	--instafeed-foreground: #0a0000 !important;
 }
 
 body, .products-section, section, .category-body {
@@ -405,6 +409,40 @@ a.btn-primary,
 	font-family: "Outfit", sans-serif !important;
 	color: #B8860B !important;
 	font-size: 16px !important;
+}
+
+/* 20. Botão COMPRAR - remover sombra do texto */
+.btn, .btn-primary, a.btn, a.btn-add-to-cart, button[type="submit"].btn {
+	text-shadow: none !important;
+}
+
+/* 21. Bloco "Receba nossas novidades" do rodapé - texto preto */
+.footer-form.text-center.text-md-left,
+.footer-form.text-center.text-md-left * {
+	color: #0a0000 !important;
+}
+
+/* 22. Seção CATEGORIAS - fundo branco (a variável --main-categories-background
+   já foi sobrescrita no :root acima; isto é reforço direto na classe) */
+.section-home.section-categories-home {
+	background-color: #ffffff !important;
+}
+
+/* 23. Seção "Siga-nos no Instagram" - ícone e textos em preto (a variável
+   --instafeed-foreground já foi sobrescrita no :root acima; reforço direto) */
+.section-home.section-instafeed,
+.section-home.section-instafeed * {
+	color: #0a0000 !important;
+}
+.section-home.section-instafeed svg,
+.section-home.section-instafeed svg * {
+	fill: #0a0000 !important;
+	stroke: #0a0000 !important;
+}
+
+/* 24. Seção CHIC COLLECTION (produto em destaque na Home) - fundo branco */
+section.section-home.home-main-product {
+	background-color: #ffffff !important;
 }
 
 /* 19. Rodapé - fundo dourado, texto/fonte Outfit branco */
