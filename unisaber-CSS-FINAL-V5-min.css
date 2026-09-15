@@ -227,3 +227,42 @@ body.template-product .nav-desktop.nav-menu-full {
 	fill: #000000 !important;
 	stroke: #000000 !important;
 }
+
+/* FIX EMERGENCIAL 14/09: trava a paleta de cores aprovada (dourado/off-white/preto)
+   direto via CSS, porque o painel de Design > Cores da Nuvemshop está com
+   comportamento instável (mudanças não persistem/publicam de forma confiável).
+   Isso é uma rede de segurança visual - não substitui resolver o painel de
+   Cores em definitivo, mas garante a aparência aprovada enquanto isso não acontece.
+   Sobrescreve tanto classes conhecidas quanto variáveis CSS do tema (o tema usa
+   custom properties tipo --main-foreground, --main-background para theming). */
+
+:root {
+	--main-foreground: #0a0000 !important;
+	--main-background: #F7F4EC !important;
+	--search-foreground: #0a0000 !important;
+	--search-background: #ffffff !important;
+	--topbar-foreground: #0a0000 !important;
+}
+
+body, .products-section, section, .category-body {
+	background-color: #F7F4EC !important;
+}
+
+/* Botões "COMPRAR" (listagem, categoria e página de produto) - preto com texto branco */
+.btn-primary,
+button[type="submit"].btn,
+a.btn-primary,
+.item-actions a.btn,
+.item-actions button,
+[class*="add-to-cart"],
+.js-add-to-cart,
+.js-open-quickshop-wording {
+	background-color: #0a0000 !important;
+	border-color: #0a0000 !important;
+	color: #ffffff !important;
+}
+
+/* Preço em destaque, títulos de seção, ícones sociais do rodapé - dourado aprovado */
+.section-title, .price, .js-price-container .price {
+	color: #B8860B !important;
+}
