@@ -238,7 +238,7 @@ body.template-product .nav-desktop.nav-menu-full {
 
 :root {
 	--main-foreground: #0a0000 !important;
-	--main-background: #F7F4EC !important;
+	--main-background: #ffffff !important;
 	--search-foreground: #0a0000 !important;
 	--search-background: #ffffff !important;
 	--topbar-foreground: #0a0000 !important;
@@ -249,7 +249,7 @@ body.template-product .nav-desktop.nav-menu-full {
 }
 
 body, .products-section, section:not(.section-hero):not([class*="swiper"]):not([class*="banner"]), .category-body {
-	background-color: #F7F4EC !important;
+	background-color: #ffffff !important;
 }
 
 /* Botões "COMPRAR" (listagem, categoria e página de produto) - preto com texto branco */
@@ -287,7 +287,7 @@ a.btn-primary,
 /* 2. Contact bar - fundo off-white, texto preto (inclui webkit-text-fill-color,
    que é a propriedade que o tema usa e sobrescreve "color" sozinho) */
 .js-contact-bar {
-	background-color: #F7F4EC !important;
+	background-color: #ffffff !important;
 }
 .js-contact-bar, .js-contact-bar a, .js-contact-bar span, .js-contact-bar div {
 	color: #0a0000 !important;
@@ -336,6 +336,15 @@ a.btn-primary,
 	font-family: "Playfair Display", serif !important;
 	color: #B8860B !important;
 	font-size: 40px !important;
+}
+
+/* 27. Título (variante my-0, ex: título de página/categoria) - Playfair Display,
+   preto, 44px, peso 300 (leve) */
+.text-heading.my-0 {
+	font-family: "Playfair Display", serif !important;
+	color: #0a0000 !important;
+	font-size: 44px !important;
+	font-weight: 300 !important;
 }
 
 /* 8. Subtítulo da Home - Outfit, preto, 18px */
@@ -485,11 +494,27 @@ section.section-home.home-main-product {
 	background-color: #ffffff !important;
 }
 
-/* 19. Rodapé - fundo dourado, texto/fonte Outfit branco */
-footer {
-	background-color: #B8860B !important;
+/* 19. Rodapé - fundo #f5f5f5 (item 3+4 da lista, mesma cor pros dois seletores
+   pedidos: tag footer genérica + a lista completa de classes reais do elemento,
+   como reforço de especificidade) */
+footer,
+footer.js-footer.js-hide-footer-while-scrolling.main-footer.footer-home.footer-colors.display-when-content-ready {
+	background-color: #f5f5f5 !important;
 }
 footer, footer a, footer p, footer span, footer div, footer h4 {
 	font-family: "Outfit", sans-serif !important;
 	color: #ffffff !important;
+}
+
+/* 28. Botão de submit (ex: busca) - texto branco */
+.btn.btn-primary.btn-submit {
+	color: #ffffff !important;
+}
+
+/* 29. Campo de busca (form-group) - reduzir para o mínimo possível */
+.form-group.m-0 {
+	width: auto !important;
+	min-width: 0 !important;
+	max-width: 160px !important;
+	flex: 0 0 auto !important;
 }
