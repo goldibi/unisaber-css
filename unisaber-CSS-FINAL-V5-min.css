@@ -526,13 +526,14 @@ footer, footer a, footer p, footer span, footer div, footer h4 {
 	color: #0a0000 !important;
 }
 
-/* 31. Menu principal - underline fino vermelho no hover dos links */
+/* 31. Menu principal - underline fino vermelho no hover dos links, texto
+   permanece preto (ajustado 16/09: antes o texto também ficava vermelho) */
 .nav-desktop .nav-list-link:hover {
 	text-decoration: underline !important;
 	text-decoration-color: #B11226 !important;
 	text-decoration-thickness: 1px !important;
 	text-underline-offset: 4px !important;
-	color: #B11226 !important;
+	color: #0a0000 !important;
 }
 
 /* 32. Remover efeito de sombra no hover da imagem do produto (card na listagem) */
@@ -545,4 +546,23 @@ footer, footer a, footer p, footer span, footer div, footer h4 {
 .js-product-item-image-link-private::before,
 .js-product-item-image-link-private::after {
 	box-shadow: none !important;
+}
+
+/* 33. Ícone específico (svg-icon-text) - preto (variante diferente do ícone
+   branco das setas do Hero, por isso seletor mais específico) */
+.icon-inline.icon-lg.svg-icon-text.mr-1 {
+	fill: #0a0000 !important;
+	stroke: #0a0000 !important;
+	color: #0a0000 !important;
+}
+
+/* 34. Mega menu (dropdown de Livros) - encostar no menu principal, sem vão
+   entre o link e o submenu. Causa provável do link "desaparecer" ao tentar
+   clicar: o gap vertical (top:110px fixo) cria uma zona morta onde o mouse
+   perde o hover antes de alcançar o submenu, fazendo o JS fechar o menu.
+   Anexando o submenu direto na borda inferior do elemento pai (top:100%)
+   elimina esse vão. */
+.js-desktop-dropdown.nav-dropdown-content.desktop-dropdown.mega-menu.open-right {
+	top: 100% !important;
+	margin-top: 0 !important;
 }
