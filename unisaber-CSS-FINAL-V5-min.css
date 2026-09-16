@@ -589,3 +589,16 @@ footer, footer a, footer p, footer span, footer div, footer h4 {
 body, body * {
 	font-family: "ll-unica77", "Helvetica Neue", Arial, sans-serif !important;
 }
+
+/* 37. Espaçamento consistente entre as seções da Home (Mais Vendidos,
+   Categorias, Chic Collection, Marcas, FAQ) - mesmo valor usado no espaço
+   banner->título da página de categoria (48px), pra manter o ritmo visual
+   igual em todas as páginas do site. */
+.section-home.section-featured-home.best-seller-sale-products-home,
+.section-home.section-categories-home,
+section.section-home.home-main-product,
+.section-home.section-brands-home,
+.section-home.section-faq {
+	padding-top: 48px !important;
+	padding-bottom: 48px !important;
+}
