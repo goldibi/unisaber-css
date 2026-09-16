@@ -64,10 +64,9 @@ header.head-main svg, header.head-main svg *, header.js-head-main svg, header.js
 	transform: none !important;
 }
 
-.desktop-dropdown.nav-dropdown-content.mega-menu {
-	top: 110px !important;
-	max-height: none !important;
-}
+/* Regra antiga (top:110px) removida em 16/09 - conflitava com o fix novo do
+   item 34, mais abaixo neste arquivo, que consolida o posicionamento de
+   TODOS os mega menus (não só os com classe .open-right) */
 
 #modal-cart.modal {
 	background-color: #f8f8f8 !important;
@@ -557,12 +556,24 @@ footer, footer a, footer p, footer span, footer div, footer h4 {
 }
 
 /* 34. Mega menu (dropdown de Livros) - encostar no menu principal, sem vão
-   entre o link e o submenu. Causa provável do link "desaparecer" ao tentar
-   clicar: o gap vertical (top:110px fixo) cria uma zona morta onde o mouse
-   perde o hover antes de alcançar o submenu, fazendo o JS fechar o menu.
-   Anexando o submenu direto na borda inferior do elemento pai (top:100%)
-   elimina esse vão. */
-.js-desktop-dropdown.nav-dropdown-content.desktop-dropdown.mega-menu.open-right {
+   entre o link e o submenu, e reduzir o tamanho do painel. Causa provável do
+   link "desaparecer" ao tentar clicar: o gap vertical (top:110px fixo antes)
+   cria uma zona morta onde o mouse perde o hover antes de alcançar o submenu,
+   fazendo o JS fechar o menu. Anexando o submenu direto na borda inferior do
+   elemento pai (top:100%) elimina esse vão. Seletor .mega-menu sozinho (sem
+   depender de .open-right) pra pegar TODAS as variantes do dropdown. */
+.mega-menu.desktop-dropdown.nav-dropdown-content {
 	top: 100% !important;
 	margin-top: 0 !important;
+	padding: 20px !important;
+	max-height: 420px !important;
+}
+.mega-menu.desktop-dropdown.nav-dropdown-content .nav-dropdown-list {
+	padding: 8px 0 !important;
+}
+
+/* 35. Espaço entre o banner da categoria (imagem hero) e o título da página -
+   aumentado (era mb-3, ~16px por padrão do tema) */
+.category-banner.mb-3 {
+	margin-bottom: 48px !important;
 }
