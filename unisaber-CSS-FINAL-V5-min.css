@@ -331,10 +331,11 @@ a.btn-primary,
 	stroke: #0a0000 !important;
 }
 
-/* 7. Título de seção (ex: "Mais Vendidos") - Playfair Display, dourado, 40px */
+/* 7. Título de seção (ex: "Mais Vendidos") - Playfair Display, preto, 40px
+   (cor atualizada 16/09: era dourado, agora preto) */
 .text-heading.mb-0 {
 	font-family: "Playfair Display", serif !important;
-	color: #B8860B !important;
+	color: #0a0000 !important;
 	font-size: 40px !important;
 }
 
@@ -375,6 +376,7 @@ a.btn-primary,
 	border-color: #B11226 !important;
 	color: #ffffff !important;
 	font-size: 16px !important;
+	text-shadow: none !important;
 }
 .btn:hover svg, .btn-primary:hover svg, a.btn:hover svg {
 	fill: #ffffff !important;
@@ -503,7 +505,7 @@ footer.js-footer.js-hide-footer-while-scrolling.main-footer.footer-home.footer-c
 }
 footer, footer a, footer p, footer span, footer div, footer h4 {
 	font-family: "Outfit", sans-serif !important;
-	color: #ffffff !important;
+	color: #0a0000 !important;
 }
 
 /* 28. Botão de submit (ex: busca) - texto branco */
@@ -517,4 +519,30 @@ footer, footer a, footer p, footer span, footer div, footer h4 {
 	min-width: 0 !important;
 	max-width: 160px !important;
 	flex: 0 0 auto !important;
+}
+
+/* 30. Marca do produto (ex: "Assouline" abaixo do nome do livro) - texto preto */
+.m-0.h6.text-uppercase {
+	color: #0a0000 !important;
+}
+
+/* 31. Menu principal - underline fino vermelho no hover dos links */
+.nav-desktop .nav-list-link:hover {
+	text-decoration: underline !important;
+	text-decoration-color: #B11226 !important;
+	text-decoration-thickness: 1px !important;
+	text-underline-offset: 4px !important;
+	color: #B11226 !important;
+}
+
+/* 32. Remover efeito de sombra no hover da imagem do produto (card na listagem) */
+.js-product-item-image-link-private:hover,
+.js-product-item-image-link-private:hover img,
+.js-product-item-image-link-private:hover * {
+	box-shadow: none !important;
+	filter: none !important;
+}
+.js-product-item-image-link-private::before,
+.js-product-item-image-link-private::after {
+	box-shadow: none !important;
 }
