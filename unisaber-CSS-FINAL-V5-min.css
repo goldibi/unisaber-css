@@ -602,3 +602,49 @@ section.section-home.home-main-product,
 	padding-top: 48px !important;
 	padding-bottom: 48px !important;
 }
+
+/* ============================================
+   ÍCONES CUSTOMIZADOS DO HEADER (busca, conta,
+   carrinho, hambúrguer) - ajustes finais
+   ============================================ */
+
+/* 1. Reduzir tamanho em 30% - escopo só nos 4 ícones do header,
+   não afeta ícones em outras partes do site (rodapé, contact bar, etc) */
+header .head-search-icon svg,
+header .nav-account svg,
+header .js-utilities-item svg,
+header #ajax-cart svg,
+header .btn-hamburger svg {
+	transform: scale(0.7);
+	transform-origin: center;
+}
+
+/* 2. Garantir que o ícone herde a cor do tema (fill currentColor) e mude
+   de cor no hover - dourado da marca */
+header .head-search-icon svg,
+header .nav-account svg,
+header .js-utilities-item svg,
+header #ajax-cart svg,
+header .btn-hamburger svg,
+header .head-search-icon svg *,
+header .nav-account svg *,
+header .js-utilities-item svg *,
+header #ajax-cart svg *,
+header .btn-hamburger svg * {
+	fill: currentColor !important;
+}
+header .head-search-icon a:hover svg,
+header .nav-account:hover svg,
+header .js-utilities-item:hover svg,
+header #ajax-cart a:hover svg,
+header .btn-hamburger:hover svg {
+	color: #B11226 !important;
+}
+
+/* 3. Reduzir o espaço extra entre a busca e o ícone de conta */
+header .utilities-item.pl-2 {
+	padding-left: 4px !important;
+}
+header .head-search-icon a {
+	padding-right: 4px !important;
+}
