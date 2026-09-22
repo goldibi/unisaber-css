@@ -638,7 +638,16 @@ header .nav-account:hover svg,
 header .js-utilities-item:hover svg,
 header #ajax-cart a:hover svg,
 header .btn-hamburger:hover svg {
-	color: #B11226 !important;
+	color: #B8860B !important;
+}
+
+/* 4. "Cadastre-se" / "Fazer login" no dropdown de conta - texto branco
+   sobre fundo branco, invisível; forçar preto */
+.subutility-list,
+.subutility-list-item,
+.subutility-list .nav-accounts-link {
+	color: #0a0000 !important;
+	-webkit-text-fill-color: #0a0000 !important;
 }
 
 /* 3. Reduzir o espaço extra entre a busca e o ícone de conta */
