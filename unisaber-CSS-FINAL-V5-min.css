@@ -370,7 +370,11 @@ a.btn-primary,
 	font-weight: 400 !important;
 }
 
-/* 11. Botão COMPRAR no hover - fundo vermelho, Outfit, texto/ícone branco, 16px */
+/* 11. Botão COMPRAR no hover - fundo vermelho, Outfit, texto/ícone branco, 16px,
+   com transição suave de 0.2s (mais refinado que a troca instantânea de cor) */
+.btn, .btn-primary, a.btn {
+	transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease !important;
+}
 .btn:hover, .btn-primary:hover, a.btn:hover {
 	font-family: "ll-unica77", "Helvetica Neue", Arial, sans-serif !important;
 	background-color: #B11226 !important;
