@@ -513,16 +513,30 @@ a.btn-primary,
 	padding: 0 4px !important;
 }
 /* 25b. Item "Livros" (com dropdown) - vão maior que os outros antes de
-   "Papelaria". CONFIRMADO 23/09 via Computado (margin-right do <li>: 0px):
-   não é margem do item nem o mega menu fora do fluxo. A causa real é a
-   seta (<span class="nav-list-arrow ml-2">) dentro do próprio link - ela
-   tem margem própria (.ml-2) que alarga a caixa clicável do "Livros".
-   FIX DEFINITIVO: zerar a margem direto na seta (a fonte real do espaço),
-   em vez de tentar compensar por fora com margem negativa no item (que não
-   resolveu, porque o problema nunca esteve no <li>, sempre esteve dentro
-   dele, na seta). */
+   "Papelaria". DIAGNÓSTICO FINAL 23/09, confirmado por print: a seta não
+   está com margem grande - ela está colada na ponta direita de uma caixa
+   larga demais, longe da palavra "Livros". Isso é o link/item esticando
+   (flex-grow) e distribuindo texto e seta nas pontas (justify-content:
+   space-between), não uma margem. As duas tentativas anteriores (margem
+   negativa no <li>, margem na seta) nunca tinham chance de resolver isso,
+   porque a causa real é o esticamento do container, não uma margem.
+   FIX: travar o item e o link no tamanho do próprio conteúdo (sem esticar,
+   sem distribuir as pontas). */
+.nav-desktop-list li[data-slug="livros"] {
+	flex: 0 0 auto !important;
+	width: auto !important;
+}
+.nav-desktop-list li[data-slug="livros"] .nav-item-container {
+	flex: 0 0 auto !important;
+	width: auto !important;
+}
+.nav-desktop-list li[data-slug="livros"] .nav-list-link {
+	flex: 0 0 auto !important;
+	width: auto !important;
+	justify-content: flex-start !important;
+}
 .nav-desktop-list li[data-slug="livros"] .nav-list-arrow {
-	margin-left: 2px !important;
+	margin-left: 6px !important;
 }
 .nav-desktop-list li[data-slug="livros"] .desktop-dropdown,
 .nav-desktop-list li[data-slug="livros"] .mega-menu {
