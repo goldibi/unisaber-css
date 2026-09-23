@@ -612,15 +612,40 @@ section.section-home.home-main-product,
    carrinho, hambúrguer) - ajustes finais
    ============================================ */
 
-/* 1. Reduzir tamanho em 30% - escopo só nos 4 ícones do header,
-   não afeta ícones em outras partes do site (rodapé, contact bar, etc) */
+/* 1. Reduzir tamanho - escopo só nos 4 ícones do header,
+   não afeta ícones em outras partes do site (rodapé, contact bar, etc).
+   Reduzido ainda mais 21/09: 0.7 -> 0.55 (desktop), 0.5 no mobile. */
 header .head-search-icon svg,
 header .nav-account svg,
 header .js-utilities-item svg,
 header #ajax-cart svg,
 header .btn-hamburger svg {
-	transform: scale(0.7);
+	transform: scale(0.55);
 	transform-origin: center;
+}
+@media (max-width: 767px) {
+	header .head-search-icon svg,
+	header .nav-account svg,
+	header .js-utilities-item svg,
+	header #ajax-cart svg,
+	header .btn-hamburger svg {
+		transform: scale(0.5);
+	}
+}
+
+/* 1b. Logo maior - especialmente no mobile, onde estava desproporcional
+   ao restante do header. Seletor genérico pego pela div que já vimos
+   envolver o logo em várias partes do .tpl (header-logo-row). */
+.header-logo-row img,
+.header-logo-row svg {
+	max-height: 44px !important;
+	width: auto !important;
+}
+@media (max-width: 767px) {
+	.header-logo-row img,
+	.header-logo-row svg {
+		max-height: 38px !important;
+	}
 }
 
 /* 2. Garantir que o ícone herde a cor do tema (fill currentColor) e mude
