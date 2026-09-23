@@ -497,12 +497,13 @@ a.btn-primary,
 }
 
 /* 25. Menu principal (desktop) - centralizar e reduzir espaçamento entre links.
-   Causa do espaçamento grande: classe .justify-content-between distribui os
-   links nas pontas do container inteiro. Troca pra layout centralizado com
-   espaçamento fixo entre itens (aprox. 60% menor que a distância que existia).
-   flex-wrap:nowrap impede quebra em 2 linhas; gap menor em telas mais estreitas
-   evita que o menu ultrapasse a largura disponível. */
-.js-nav-desktop-list.nav-desktop-list.justify-content-between {
+   CORRIGIDO 21/09: o seletor usava .justify-content-between, mas a classe real
+   do elemento é .justify-content-center - por isso essa regra NUNCA aplicou
+   em nenhuma tentativa anterior (não era problema de largura/logo/ícone,
+   era simplesmente o seletor errado o tempo todo). Confirmado via HTML real
+   do elemento. flex-wrap:nowrap impede quebra em 2 linhas; gap menor em
+   telas mais estreitas evita que o menu ultrapasse a largura disponível. */
+.js-nav-desktop-list.nav-desktop-list {
 	justify-content: center !important;
 	flex-wrap: nowrap !important;
 	gap: 20px !important;
@@ -512,12 +513,12 @@ a.btn-primary,
 	padding: 0 4px !important;
 }
 @media (max-width: 1100px) {
-	.js-nav-desktop-list.nav-desktop-list.justify-content-between {
+	.js-nav-desktop-list.nav-desktop-list {
 		gap: 14px !important;
 	}
 }
 @media (max-width: 950px) {
-	.js-nav-desktop-list.nav-desktop-list.justify-content-between {
+	.js-nav-desktop-list.nav-desktop-list {
 		gap: 6px !important;
 		font-size: 13px !important;
 	}
