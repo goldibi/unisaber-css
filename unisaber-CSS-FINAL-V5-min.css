@@ -371,11 +371,13 @@ a.btn-primary,
 }
 
 /* 11. Botão COMPRAR no hover - fundo vermelho, Outfit, texto/ícone branco, 16px,
-   com transição suave de 0.2s (mais refinado que a troca instantânea de cor) */
-.btn, .btn-primary, a.btn {
+   com transição suave de 0.2s. :not(.btn-hamburger) exclui o botão hambúrguer,
+   que também tem a classe "btn" e estava sendo pego sem querer, ficando
+   vermelho com fundo em vez de continuar transparente. */
+.btn:not(.btn-hamburger), .btn-primary:not(.btn-hamburger), a.btn:not(.btn-hamburger) {
 	transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease !important;
 }
-.btn:hover, .btn-primary:hover, a.btn:hover {
+.btn:not(.btn-hamburger):hover, .btn-primary:not(.btn-hamburger):hover, a.btn:not(.btn-hamburger):hover {
 	font-family: "ll-unica77", "Helvetica Neue", Arial, sans-serif !important;
 	background-color: #B11226 !important;
 	border-color: #B11226 !important;
@@ -383,9 +385,27 @@ a.btn-primary,
 	font-size: 16px !important;
 	text-shadow: none !important;
 }
-.btn:hover svg, .btn-primary:hover svg, a.btn:hover svg {
+.btn:not(.btn-hamburger):hover svg, .btn-primary:not(.btn-hamburger):hover svg, a.btn:not(.btn-hamburger):hover svg {
 	fill: #ffffff !important;
 	stroke: #ffffff !important;
+}
+
+/* 11b. Botão hambúrguer - sem fundo, ícone preto (era pego sem querer
+   pelas regras acima por compartilhar a classe "btn") */
+.btn-hamburger {
+	background-color: transparent !important;
+	background: none !important;
+	border-color: transparent !important;
+	box-shadow: none !important;
+}
+.btn-hamburger:hover {
+	background-color: transparent !important;
+	background: none !important;
+}
+.btn-hamburger svg {
+	fill: #0a0000 !important;
+	stroke: #0a0000 !important;
+	color: #0a0000 !important;
 }
 
 /* 12. Seção "Mais Vendidos" (grid de produtos em destaque) - fundo branco */
@@ -429,15 +449,16 @@ a.btn-primary,
 	font-size: 16px !important;
 }
 
-/* 20. Botão COMPRAR - remover sombra do texto (reforçado 16/09: a sombra
-   persistia porque o texto "Comprar" fica dentro de um <span> com estilo
-   inline próprio, que o seletor anterior não alcançava) */
+/* 20. Botão COMPRAR - remover sombra do texto (reforçado 21/09: incluído
+   box-shadow, que também gerava a sombra escura por trás do ícone/texto
+   visível no card de produto - text-shadow e filter sozinhos não bastavam) */
 .btn, .btn-primary, a.btn, a.btn-add-to-cart, button[type="submit"].btn,
 .btn *, .btn-primary *, a.btn *, a.btn-add-to-cart *, button[type="submit"].btn *,
 .js-open-quickshop-wording {
 	text-shadow: none !important;
 	filter: none !important;
 	-webkit-filter: none !important;
+	box-shadow: none !important;
 }
 
 /* 21. Bloco "Receba nossas novidades" do rodapé - texto preto */
@@ -484,7 +505,7 @@ a.btn-primary,
 .js-nav-desktop-list.nav-desktop-list.justify-content-between {
 	justify-content: center !important;
 	flex-wrap: nowrap !important;
-	gap: 32px !important;
+	gap: 20px !important;
 	white-space: nowrap !important;
 }
 .nav-desktop-list li {
@@ -612,16 +633,18 @@ section.section-home.home-main-product,
    carrinho, hambúrguer) - ajustes finais
    ============================================ */
 
-/* 1. Reduzir tamanho - escopo só nos 4 ícones do header,
-   não afeta ícones em outras partes do site (rodapé, contact bar, etc).
-   Reduzido ainda mais 21/09: 0.7 -> 0.55 (desktop), 0.5 no mobile. */
+/* 1. Reduzir tamanho de verdade (width/height reais, não só transform) -
+   corrige o "espaço demais entre os ícones": transform:scale só encolhia
+   o desenho, mantendo a caixa do tamanho original, sobrando vão ao redor.
+   Escopo só nos 4 ícones do header. */
 header .head-search-icon svg,
 header .nav-account svg,
 header .js-utilities-item svg,
 header #ajax-cart svg,
 header .btn-hamburger svg {
-	transform: scale(0.55);
-	transform-origin: center;
+	width: 18px !important;
+	height: 18px !important;
+	transform: none !important;
 }
 @media (max-width: 767px) {
 	header .head-search-icon svg,
@@ -629,22 +652,35 @@ header .btn-hamburger svg {
 	header .js-utilities-item svg,
 	header #ajax-cart svg,
 	header .btn-hamburger svg {
-		transform: scale(0.5);
+		width: 16px !important;
+		height: 16px !important;
 	}
 }
 
-/* 1b. Logo maior - especialmente no mobile, onde estava desproporcional
-   ao restante do header. Seletor genérico pego pela div que já vimos
-   envolver o logo em várias partes do .tpl (header-logo-row). */
+/* 1b. Trava contra o header quebrar em linhas: a linha de ícones
+   (busca/conta/carrinho) vem dentro de um <div class="row"> do Bootstrap,
+   que quebra linha automaticamente se faltar espaço horizontal. Forçando
+   nowrap + alinhamento vertical pra não empilhar verticalmente de novo. */
+header .utilities-container .row {
+	flex-wrap: nowrap !important;
+	align-items: center !important;
+}
+header .utilities-container {
+	align-items: center !important;
+}
+
+/* 1c. Logo maior, mas com limite mais contido - o valor anterior (44px)
+   estava tomando espaço demais e espremendo o menu/ícones, causando
+   quebra de linha. Reduzido pra um meio-termo mais seguro. */
 .header-logo-row img,
 .header-logo-row svg {
-	max-height: 44px !important;
+	max-height: 36px !important;
 	width: auto !important;
 }
 @media (max-width: 767px) {
 	.header-logo-row img,
 	.header-logo-row svg {
-		max-height: 38px !important;
+		max-height: 32px !important;
 	}
 }
 
