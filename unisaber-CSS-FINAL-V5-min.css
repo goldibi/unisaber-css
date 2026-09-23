@@ -513,19 +513,15 @@ a.btn-primary,
 	padding: 0 4px !important;
 }
 /* 25b. Item "Livros" (com dropdown) - vão maior que os outros antes de
-   "Papelaria". Seletor via data-slug="livros" (atributo confirmado no HTML
-   real do elemento, não depende de adivinhar nome de classe). Duas causas
-   possíveis cobertas juntas: (1) margem própria do item, (2) o painel do
-   mega menu não estar garantidamente position:absolute - se cair pra
-   static/relative por qualquer motivo, ele ocupa espaço dentro do fluxo
-   do menu mesmo escondido visualmente, empurrando os itens seguintes. */
+   "Papelaria". CONFIRMADO 23/09 via Computado (margin-right: 0px): não é
+   margem escondida nem o mega menu fora do fluxo - é a seta (chevron ▾)
+   dentro do link, que tem margem própria (.ml-2) + a própria largura do
+   ícone, deixando a caixa do "Livros" mais larga que as outras. O gap é
+   igual pra todo mundo, mas o olho lê o fim do texto como referência e
+   sobra a largura da seta como vão extra. Compensando com margem negativa
+   pra puxar "Papelaria" de volta pra perto, sem mexer no gap geral. */
 .nav-desktop-list li[data-slug="livros"] {
-	margin: 0 !important;
-	padding: 0 4px !important;
-}
-.nav-desktop-list li[data-slug="livros"] .nav-item-container {
-	width: auto !important;
-	display: inline-block !important;
+	margin-right: -20px !important;
 }
 .nav-desktop-list li[data-slug="livros"] .desktop-dropdown,
 .nav-desktop-list li[data-slug="livros"] .mega-menu {
