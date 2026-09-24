@@ -71,9 +71,12 @@ header.head-main svg, header.head-main svg *, header.js-head-main svg, header.js
 	}
 }
 
+/* 24/09: removido o transform:none global daqui. Ele anulava as rotações
+   do tema (seta "anterior" do hero, seta de Livros no menu mobile, setas de
+   acordeão). O transform:none necessário pros ícones do header já está
+   escopado no bloco dos 4 ícones do header, mais abaixo. */
 .icon-inline, .icon-1x {
 	vertical-align: middle !important;
-	transform: none !important;
 }
 
 /* Regra antiga (top:110px) removida em 16/09 - conflitava com o fix novo do
@@ -862,14 +865,4 @@ header .head-search-icon a {
 #nav-hamburger .item-with-subitems .nav-list-panel,
 #nav-hamburger .item-with-subitems [class*="panel"] {
 	background-color: #F7F4EC !important;
-}
-/* Seta de Livros no menu mobile apontando pra esquerda: a regra global
-   .icon-inline { transform:none } anula o giro de 180° que o tema aplica.
-   Devolve o giro só na seta do item com submenu (não afeta o "voltar"
-   de dentro do submenu, que fica em container aninhado). */
-#nav-hamburger li.item-with-subitems > a svg.icon-inline,
-#nav-hamburger li.item-with-subitems > .nav-list-link svg.icon-inline,
-#nav-hamburger li.item-with-subitems > [class*="arrow"] svg.icon-inline,
-#nav-hamburger li.item-with-subitems > [class*="toggle"] svg.icon-inline {
-	transform: rotate(180deg) !important;
 }
