@@ -58,6 +58,18 @@ header.head-main svg, header.head-main svg *, header.js-head-main svg, header.js
 	display: flex !important;
 	align-items: center !important;
 }
+/* Respeita o d-none do tema: a regra acima forçava display:flex em TODO
+   .utilities-item, inclusive o de conta (d-none d-lg-flex), que o tema
+   esconde no mobile (conta fica dentro do menu hambúrguer). No mobile ele
+   aparecia sem tamanho definido e empurrava ícones pra linha de baixo. */
+.utilities-item.d-none {
+	display: none !important;
+}
+@media (min-width: 992px) {
+	.utilities-item.d-none.d-lg-flex {
+		display: flex !important;
+	}
+}
 
 .icon-inline, .icon-1x {
 	vertical-align: middle !important;
@@ -715,17 +727,19 @@ header .utilities-container {
 	align-items: center !important;
 }
 
-/* 1c. Logo maior, mas com limite mais contido - o valor anterior (44px)
+/* 1c. (24/09: escopo corrigido com :not(.icon-inline) — antes pegava
+   também a seta do menu e ícones do mobile, deixando-os com 300px.)
+   Logo maior, mas com limite mais contido - o valor anterior (44px)
    estava tomando espaço demais e espremendo o menu/ícones, causando
    quebra de linha. Reduzido pra um meio-termo mais seguro. */
 .header-logo-row img,
-.header-logo-row svg {
+.header-logo-row svg:not(.icon-inline) {
 	max-height: 36px !important;
 	width: auto !important;
 }
 @media (max-width: 767px) {
 	.header-logo-row img,
-	.header-logo-row svg {
+	.header-logo-row svg:not(.icon-inline) {
 		max-height: 32px !important;
 	}
 }
