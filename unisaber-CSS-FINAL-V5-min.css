@@ -513,56 +513,37 @@ a.btn-primary,
 	padding: 0 4px !important;
 }
 /* 25b. Item "Livros" (com dropdown) - vão maior que os outros antes de
-   "Papelaria". DIAGNÓSTICO FINAL 23/09, confirmado por print: a seta não
-   está com margem grande - ela está colada na ponta direita de uma caixa
-   larga demais, longe da palavra "Livros". Isso é o link/item esticando
-   (flex-grow) e distribuindo texto e seta nas pontas (justify-content:
-   space-between), não uma margem. As duas tentativas anteriores (margem
-   negativa no <li>, margem na seta) nunca tinham chance de resolver isso,
-   porque a causa real é o esticamento do container, não uma margem.
-   FIX: travar o item e o link no tamanho do próprio conteúdo (sem esticar,
-   sem distribuir as pontas). */
-.nav-desktop-list li[data-slug="livros"] {
-	flex: 0 0 auto !important;
+   "Papelaria". CONFIRMADO 23/09 via getBoundingClientRect: o <li> mede
+   372.69px de largura real (não é ilusão visual, não é margem, não é a
+   seta). A causa provável: o <li> tem a classe "navigation-banner" (recurso
+   do tema Flex pra exibir banner/imagem dentro do mega menu) - essa classe
+   provavelmente carrega uma largura própria do tema, com força maior que os
+   seletores anteriores baseados só em data-slug. Mirando direto em
+   .navigation-banner, que é mais específico que os testes anteriores.
+   RESULTADO AINDA NÃO CONFIRMADO PELO CLIENTE - este fix nunca chegou a ser
+   publicado na sessão anterior; reinserido aqui em 24/09. */
+li.navigation-banner[data-slug="livros"],
+.nav-desktop-list li.navigation-banner {
 	width: auto !important;
+	max-width: max-content !important;
+	min-width: 0 !important;
+	flex: 0 0 auto !important;
 }
-.nav-desktop-list li[data-slug="livros"] .nav-item-container {
-	flex: 0 0 auto !important;
+.nav-desktop-list li.navigation-banner .nav-item-container,
+.nav-desktop-list li.navigation-banner .nav-list-link {
 	width: auto !important;
-}
-.nav-desktop-list li[data-slug="livros"] .nav-list-link {
+	max-width: max-content !important;
+	min-width: 0 !important;
 	flex: 0 0 auto !important;
-	width: auto !important;
 	justify-content: flex-start !important;
 }
-.nav-desktop-list li[data-slug="livros"] .nav-list-arrow {
+.nav-desktop-list li.navigation-banner .nav-list-arrow {
 	margin-left: 6px !important;
 }
-.nav-desktop-list li[data-slug="livros"] .desktop-dropdown,
-.nav-desktop-list li[data-slug="livros"] .mega-menu {
+.nav-desktop-list li.navigation-banner .desktop-dropdown,
+.nav-desktop-list li.navigation-banner .mega-menu {
 	position: absolute !important;
-}
-/* 25c. Fix navigation-banner (24/09). O fix 25b (data-slug) não resolveu:
-   o <li> de Livros continua com 372px porque também carrega a classe
-   .navigation-banner (recurso de banner no mega menu do tema Flex), que
-   traz largura própria. Esse esticamento causa DOIS sintomas: o vão entre
-   Livros e Papelaria e os ícones do header pulando para a linha de baixo
-   em telas de 14" (logo + menu + ícones passam da largura disponível).
-   Não mexe em position/top/max-height do dropdown (controlados pelo JS). */
-header .nav-desktop-list > li.navigation-banner,
-header .nav-desktop-list > li[data-slug="livros"],
-.js-nav-desktop-list.nav-desktop-list > li.navigation-banner {
-	flex: 0 0 auto !important;
-	width: auto !important;
-	min-width: 0 !important;
-	max-width: max-content !important;
-}
-header .nav-desktop-list > li.navigation-banner > .nav-item-container,
-header .nav-desktop-list > li.navigation-banner .nav-list-link {
-	flex: 0 0 auto !important;
-	width: auto !important;
-	min-width: 0 !important;
-	justify-content: flex-start !important;
+	width: max-content !important;
 }
 @media (max-width: 1100px) {
 	.js-nav-desktop-list.nav-desktop-list {
