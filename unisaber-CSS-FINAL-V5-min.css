@@ -743,6 +743,30 @@ header .utilities-container {
 		max-height: 32px !important;
 	}
 }
+/* 1d. Mobile (24/09): logo menor e coluna da logo podendo encolher, pra
+   hambúrguer + logo + busca + carrinho caberem numa linha até em 360px.
+   min-width:0 é o ponto-chave: sem ele a coluna flex não encolhe abaixo
+   da largura da imagem e empurra o carrinho pra linha de baixo. */
+@media (max-width: 767px) {
+	.header-logo-row .js-head-logo > .col {
+		min-width: 0 !important;
+	}
+	.header-logo-row #logo.logo-img-container {
+		max-width: 180px !important;
+		margin: 0 auto !important;
+	}
+	.header-logo-row #logo .logo-img {
+		max-height: 28px !important;
+		max-width: 100% !important;
+		width: auto !important;
+		height: auto !important;
+	}
+}
+@media (max-width: 380px) {
+	.header-logo-row #logo.logo-img-container {
+		max-width: 150px !important;
+	}
+}
 
 /* 2. Garantir que o ícone herde a cor do tema (fill currentColor) e mude
    de cor no hover - dourado da marca */
