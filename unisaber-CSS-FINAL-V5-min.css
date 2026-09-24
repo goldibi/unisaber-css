@@ -542,6 +542,28 @@ a.btn-primary,
 .nav-desktop-list li[data-slug="livros"] .mega-menu {
 	position: absolute !important;
 }
+/* 25c. Fix navigation-banner (24/09). O fix 25b (data-slug) não resolveu:
+   o <li> de Livros continua com 372px porque também carrega a classe
+   .navigation-banner (recurso de banner no mega menu do tema Flex), que
+   traz largura própria. Esse esticamento causa DOIS sintomas: o vão entre
+   Livros e Papelaria e os ícones do header pulando para a linha de baixo
+   em telas de 14" (logo + menu + ícones passam da largura disponível).
+   Não mexe em position/top/max-height do dropdown (controlados pelo JS). */
+header .nav-desktop-list > li.navigation-banner,
+header .nav-desktop-list > li[data-slug="livros"],
+.js-nav-desktop-list.nav-desktop-list > li.navigation-banner {
+	flex: 0 0 auto !important;
+	width: auto !important;
+	min-width: 0 !important;
+	max-width: max-content !important;
+}
+header .nav-desktop-list > li.navigation-banner > .nav-item-container,
+header .nav-desktop-list > li.navigation-banner .nav-list-link {
+	flex: 0 0 auto !important;
+	width: auto !important;
+	min-width: 0 !important;
+	justify-content: flex-start !important;
+}
 @media (max-width: 1100px) {
 	.js-nav-desktop-list.nav-desktop-list {
 		gap: 14px !important;
