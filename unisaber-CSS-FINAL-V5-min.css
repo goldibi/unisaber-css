@@ -806,3 +806,60 @@ header .utilities-item.pl-2 {
 header .head-search-icon a {
 	padding-right: 4px !important;
 }
+
+/* 40. MENU MOBILE (hambúrguer) - 24/09. Causa do menu "vazio": os links
+   usam color: var(--nav-mobile-foreground), que o tema define como branco,
+   sobre fundo branco. Estrutura confirmada via DevTools:
+   #nav-hamburger > .modal-header + .modal-body > .nav-primary >
+   ul.nav-list > li.nav-item > a.nav-list-link ; li.item-with-subitems
+   (Livros) ; .nav-secondary (conta). Escopo sempre em #nav-hamburger. */
+#nav-hamburger {
+	--nav-mobile-foreground: #0a0000 !important;
+	--nav-mobile-background: #ffffff !important;
+	background-color: #ffffff !important;
+	color: #0a0000 !important;
+}
+#nav-hamburger .modal-body,
+#nav-hamburger .nav-primary,
+#nav-hamburger .nav-secondary {
+	background-color: #ffffff !important;
+}
+/* Barra do topo ("Entrar") - mantém dourado com texto/ícones brancos */
+#nav-hamburger .modal-header {
+	background-color: #B8860B !important;
+}
+#nav-hamburger .modal-header,
+#nav-hamburger .modal-header a,
+#nav-hamburger .modal-header span {
+	color: #ffffff !important;
+	-webkit-text-fill-color: #ffffff !important;
+}
+#nav-hamburger .modal-header svg,
+#nav-hamburger .modal-header svg * {
+	fill: #ffffff !important;
+}
+/* Links: preto, divisória cinza clara, dourado no toque/ativo */
+#nav-hamburger .modal-body a,
+#nav-hamburger .modal-body .nav-list-link {
+	color: #0a0000 !important;
+	-webkit-text-fill-color: #0a0000 !important;
+}
+#nav-hamburger .nav-primary .nav-list > li.nav-item {
+	border-bottom: 1px solid #EAEAEA !important;
+}
+#nav-hamburger .modal-body a:hover,
+#nav-hamburger .modal-body a:active,
+#nav-hamburger .modal-body .nav-list-link.selected {
+	color: #B8860B !important;
+	-webkit-text-fill-color: #B8860B !important;
+}
+#nav-hamburger .modal-body svg,
+#nav-hamburger .modal-body svg * {
+	fill: currentColor !important;
+}
+/* Submenu de Livros: off-white pra diferenciar o nível */
+#nav-hamburger .item-with-subitems .nav-list,
+#nav-hamburger .item-with-subitems .nav-list-panel,
+#nav-hamburger .item-with-subitems [class*="panel"] {
+	background-color: #F7F4EC !important;
+}
