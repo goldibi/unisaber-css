@@ -273,10 +273,27 @@ a.btn-primary,
 .item-actions a.btn,
 .item-actions button,
 [class*="add-to-cart"],
-.js-add-to-cart,
-.js-open-quickshop-wording {
+.js-add-to-cart {
 	background-color: #0a0000 !important;
 	border-color: #0a0000 !important;
+	color: #ffffff !important;
+}
+/* 24/09: a "sombra preta" nas letras COMPRAR era FUNDO, não sombra.
+   O <span class="js-open-quickshop-wording"> (texto do botão) estava nesta
+   lista e ganhava fundo preto próprio; no hover o botão fica vermelho e o
+   span continua preto, formando a caixa escura atrás do texto. Tudo que
+   fica DENTRO do botão agora tem fundo transparente e herda o do botão. */
+.js-open-quickshop-wording,
+.item-actions .btn *,
+a.btn-add-to-cart *,
+.js-add-to-cart *,
+[class*="add-to-cart"] *,
+.js-product-form .btn-add-to-cart *,
+.js-product-form .js-addtocart * {
+	background-color: transparent !important;
+	border-color: transparent !important;
+}
+.js-open-quickshop-wording {
 	color: #ffffff !important;
 }
 
