@@ -883,3 +883,40 @@ header .head-search-icon a {
 #nav-hamburger .item-with-subitems [class*="panel"] {
 	background-color: #F7F4EC !important;
 }
+
+/* 50. DETALHES DO LIVRO (página de produto) - 24/09
+   HTML em snipplets/product/product-book-details.tpl. O container herda o
+   visual do "Meios de envio" (classe shipping-calculator); aqui só a lista. */
+.book-details-wrapper + .mb-4 {
+	margin-top: 0 !important;
+}
+.book-details-list {
+	display: grid !important;
+	grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+	gap: 16px 24px !important;
+	padding-top: 4px !important;
+}
+.book-details-item dt {
+	font-size: 11px !important;
+	font-weight: 400 !important;
+	letter-spacing: 1.5px !important;
+	text-transform: uppercase !important;
+	color: #8a8580 !important;
+	margin: 0 0 3px !important;
+}
+.book-details-item dd {
+	font-size: 14px !important;
+	color: #0a0000 !important;
+	margin: 0 !important;
+}
+.book-details-toggle,
+.book-details-toggle:hover {
+	color: #0a0000 !important;
+	text-decoration: none !important;
+}
+@media (max-width: 767px) {
+	.book-details-list {
+		grid-template-columns: 1fr 1fr !important;
+		gap: 12px 16px !important;
+	}
+}
