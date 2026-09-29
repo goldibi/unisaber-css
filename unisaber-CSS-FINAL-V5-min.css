@@ -920,3 +920,20 @@ header .head-search-icon a {
 		gap: 12px 16px !important;
 	}
 }
+/* 50b. (28/09) Linha fina cinza embaixo de "Detalhes do livro" e de
+   "Meios de envio" + ícone de caneta menor. Escopo em #single-product pra
+   não afetar a calculadora de frete do carrinho. Ícone com width E height
+   em px (nunca width:auto em svg: vira 300px, ver regra 25c). */
+#single-product .book-details,
+#single-product .shipping-calculator {
+	border: 0 !important;
+	border-bottom: 1px solid #EAEAEA !important;
+	border-radius: 0 !important;
+}
+#single-product .book-details-toggle svg.icon-lg {
+	width: 14px !important;
+	height: 14px !important;
+	max-width: 14px !important;
+	flex: 0 0 14px !important;
+	vertical-align: -2px !important;
+}
