@@ -939,3 +939,5 @@ header .head-search-icon a {
 }
 /* 51 — Nome do produto em maiúsculas (padrão Magnolia) */
 .js-product-name.product-name{text-transform:uppercase!important;letter-spacing:.02em}
+/* 51b — Nome do produto em maiúsculas (cards das listagens) */
+.js-item-name.item-name,.item-name{text-transform:uppercase!important;letter-spacing:.02em}
