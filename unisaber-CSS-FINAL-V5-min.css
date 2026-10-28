@@ -941,3 +941,6 @@ header .head-search-icon a {
 .js-product-name.product-name{text-transform:uppercase!important;letter-spacing:.02em}
 /* 51b — Nome do produto em maiúsculas (cards das listagens) */
 .js-item-name.item-name,.item-name{text-transform:uppercase!important;letter-spacing:.02em}
+/* 52 — Página de busca: cabeçalho e faixas brancos, títulos pretos */
+body.template-search .head-main,body.template-search .head-main>div,body.template-search .head-fixed,body.template-search section{background-color:#fff!important}
+body.template-search h1,body.template-search h2,body.template-search .text-heading,body.template-search .page-header *{color:#0a0000!important}
