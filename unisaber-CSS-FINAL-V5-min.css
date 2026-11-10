@@ -954,3 +954,4 @@ body.template-search .page-header.page-header-slim h1,body.template-search .page
 .gridbanner-title,.textbanner-text.over-image h3{display:table!important;margin:0 auto 18px!important;background:#fff!important;color:#0a0000!important;font-weight:700!important;letter-spacing:-.02em!important;line-height:1.1!important;padding:.3em .9em!important;border-radius:999px!important;text-shadow:none!important}
 @media(min-width:768px){.gridbanner-title,.textbanner-text.over-image h3{font-size:34px!important}}
 .gridbanner-text{display:flex!important;flex-direction:column!important;align-items:center!important}.gridbanner-text .gridbanner-btn{align-self:center!important}
+@media(max-width:767px){.gridbanner-title{font-size:20px!important;white-space:nowrap!important;margin-bottom:12px!important}}
