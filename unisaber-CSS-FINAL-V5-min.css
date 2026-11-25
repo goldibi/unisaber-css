@@ -955,3 +955,5 @@ body.template-search .page-header.page-header-slim h1,body.template-search .page
 @media(min-width:768px){.gridbanner-title,.textbanner-text.over-image h3{font-size:34px!important}}
 .gridbanner-text{display:flex!important;flex-direction:column!important;align-items:center!important}.gridbanner-text .gridbanner-btn{align-self:center!important}
 @media(max-width:767px){.gridbanner-title{font-size:24px!important;white-space:nowrap!important;margin-bottom:12px!important}}
+/* 56 Logo mobile maior */
+@media(max-width:767px){.header-logo-row #logo .logo-img{max-height:none!important;height:auto!important;width:min(52vw,200px)!important;max-width:none!important}}
