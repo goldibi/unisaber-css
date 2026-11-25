@@ -957,3 +957,5 @@ body.template-search .page-header.page-header-slim h1,body.template-search .page
 @media(max-width:767px){.gridbanner-title{font-size:24px!important;white-space:nowrap!important;margin-bottom:12px!important}}
 /* 56 Logo mobile maior */
 @media(max-width:767px){.header-logo-row #logo .logo-img{max-height:none!important;height:auto!important;width:min(52vw,200px)!important;max-width:none!important}}
+/* 57 Menu principal em maiusculas (so desktop, so 1o nivel) */
+@media(min-width:768px){.js-nav-desktop-list.nav-desktop-list>li>a{text-transform:uppercase!important;font-size:13px!important;letter-spacing:.08em!important}}
