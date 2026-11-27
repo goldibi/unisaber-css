@@ -965,4 +965,4 @@ body.template-search .page-header.page-header-slim h1,body.template-search .page
 .home-main-product-ver-todos a.btn.btn-ver-todos:hover{background:#0a0000!important;color:#fff!important;border-color:#0a0000!important}
 @media(max-width:767px){.home-main-product-ver-todos{margin-top:28px!important}}
 /* 59 Titulo da mensagem de boas-vindas (home) em Playfair */
-[data-store="home-welcome-message"] h2.text-heading,[data-store="home-welcome-message"] .text-heading{font-family:"Playfair Display",Georgia,serif!important;font-weight:400!important}
+[data-store="home-welcome-message"] h2.text-heading,[data-store="home-welcome-message"] .text-heading{font-family:"Playfair Display",Georgia,serif!important;font-weight:500!important}
