@@ -960,6 +960,6 @@ body.template-search .page-header.page-header-slim h1,body.template-search .page
 /* 57 Menu principal em maiusculas (so desktop, so 1o nivel) */
 @media(min-width:768px){.js-nav-desktop-list.nav-desktop-list>li>a{text-transform:uppercase!important;font-size:13px!important;letter-spacing:.08em!important}}
 /* 58 Botao VER TODOS no produto em destaque da home */
-.home-main-product-ver-todos{margin-top:40px!important}
-.home-main-product-ver-todos .btn-ver-todos{display:inline-block!important;min-width:220px!important;padding:14px 40px!important;text-transform:uppercase!important;letter-spacing:.08em!important}
-@media(max-width:767px){.home-main-product-ver-todos{margin-top:28px!important}.home-main-product-ver-todos .btn-ver-todos{width:100%!important}}
+.home-main-product-ver-todos{position:relative!important;z-index:5!important;clear:both!important;margin-top:48px!important;padding-top:8px!important}
+.home-main-product-ver-todos .btn-ver-todos{position:relative!important;z-index:5!important;display:inline-block!important;min-width:220px!important;padding:14px 40px!important;line-height:1.2!important;text-transform:uppercase!important;letter-spacing:.08em!important;overflow:visible!important}
+@media(max-width:767px){.home-main-product-ver-todos{margin-top:32px!important}.home-main-product-ver-todos .btn-ver-todos{width:100%!important}}
